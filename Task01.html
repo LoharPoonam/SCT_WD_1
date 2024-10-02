@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b73aea714b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="logo">Buildskill Tech</div>
+        <ul class="navbar">
+            <li><a href="#home"><i class="fa-solid fa-house"></i>HOME</a></li>
+            <li><a href="#login"><i class="fa-solid fa-user"></i>LOGIN</a></li>
+            <li><a href="#about"><i class="fa-solid fa-address-card"></i>ABOUT</a></li>
+            <li><a href="#services"><i class="fa-solid fa-handshake"></i>SERVICES</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-envelope"></i>CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <header id="home">
+        <h1>Welcome to BUILDSKILL TECH!</h1>
+        <p id="home1">Unlock your business's potential with BuildSkill Tech's innovative web development and software solutions. Our expert team delivers powerful, customized results to help you grow and thrive in the digital world.</p>
+        
+    </header>
+         <div class="buildskillgif">
+        <img src="buildskilltech.gif" alt="TV Animation">
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2><center>About Us</center></h2>
+        <p>At BuildSkill Tech, we are passionate about empowering businesses to succeed in the fast-paced digital world. Founded with a mission to deliver innovative and tailored technology solutions, we specialize in web development, software development, and digital transformation. Our goal is to provide businesses of all sizes with the tools and expertise they need to stay ahead of the competition and achieve sustainable growth.<br><br>
+            
+            We pride ourselves on our ability to understand the unique challenges and opportunities that each business faces. Our team of highly skilled developers, designers, and technical experts work closely with clients to create customized solutions that align with their specific needs and goals. Whether you're a startup looking to establish your digital presence or a well-established company seeking to modernize and optimize your existing systems, BuildSkill Tech has the expertise and resources to help.<br><br>
+            
+            Our services span across various industries, offering end-to-end solutions that include website design, web and mobile app development, cloud-based software solutions, e-commerce platforms, and custom business applications. We also provide ongoing technical support and maintenance, ensuring that your digital tools remain efficient and up-to-date.<br><br>
+            
+            What sets BuildSkill Tech apart is our commitment to quality, innovation, and customer satisfaction. We stay at the forefront of the latest technology trends and industry best practices to ensure our clients receive state-of-the-art solutions that give them a competitive edge. Our team is dedicated to delivering on time, within budget, and with precision, making sure that every project not only meets but exceeds expectations.<br><br>
+            
+            As your trusted technology partner, we believe in fostering long-term relationships by consistently delivering exceptional service and measurable results. At BuildSkill Tech, your success is our success.<br><br>
+            
+            <b>Our Mission:</b><br>
+            To empower businesses through innovative, customized digital solutions that drive growth and enhance operational efficiency.<br><br>
+            <b>Our Vision:</b><br>
+            To be a leading technology solutions provider, recognized for our commitment to excellence, innovation, and customer success.<br><br>
+            
+            <b>Our Values:</b><br>
+            
+            Innovation: We are committed to providing cutting-edge solutions that meet the evolving needs of our clients.
+            Integrity: We uphold the highest standards of honesty and transparency in all our dealings.
+            Customer-Centric: We place our clients at the heart of everything we do, striving to deliver unmatched value.
+            Quality: We are dedicated to delivering superior products and services that exceed expectations.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2><center>Our Services</center></h2>
+        <div class="service">
+            <div class="card">
+                <h3>Custom Software Development</h3>
+                <p>We build scalable software solutions to optimize your business processes.</p>
+            </div>
+            <div class="card">
+                <h3>E-commerce Solutions</h3>
+                <p>We design and develop fully integrated e-commerce platforms to boost sales.</p>
+            </div>
+            <div class="card">
+                <h3>Mobile App Development</h3>
+                <p>Our team creates user-friendly mobile apps that enhance customer engagement.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Solutions</h3>
+                <p>We offer secure cloud services to improve flexibility and reduce costs.</p>
+            </div>
+            <div class="card">
+                <h3>Digital Transformation</h3>
+                <p>We help modernize your business with the latest technology solutions.</p>
+            </div>
+            <div class="card">
+                <h3>Maintenance & Support</h3>
+                <p>Our experts provide ongoing support to ensure your systems run smoothly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <textarea rows="5" placeholder="Your Message" required></textarea><br>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Buildskill Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Change navbar color on scroll
+        window.onscroll = function() {changeNav()};
+        
+        function changeNav() {
+            const navbar = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = "#333"; // Darken navbar on scroll
+            } else {
+                navbar.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+            }
+        }
+    </script>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+                const offset = 80; // Adjust this value to the height of your navbar
+
+                window.scrollTo({
+                    top: target.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

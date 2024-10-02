@@ -1,0 +1,172 @@
+/* General Body Styles */
+body {
+    background: black; /* Deep dark background */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f5f5f5; /* Light text for readability */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px; /* Adjust for fixed navbar */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #1e1e1e; /* Darker navbar for clean look */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(45, 44, 44, 0.7); /* Subtle shadow */
+}
+
+.logo {
+    font-family: 'Press Start 2P', sans-serif;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px whitesmoke;
+    float: left;
+    color: aliceblue;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar li:hover a {
+    background-color: #333; /* Dark hover effect */
+    color: #00bcd4; /* Professional cyan accent */
+}
+
+/* Home Section */
+#home {
+    margin-top: 100px;
+    padding: 2px;
+    text-align: center;
+    border: outset 10px #666c6d; /* Cyan accent border */
+    margin-left: 10%;
+    width: 80%;
+    height: 5%;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+ 
+}
+
+.buildskillgif img{
+    margin-left:30%;
+    width: 40%;
+    height:10%;
+}
+
+/* About Section */
+.about {
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Professional shadow */
+}
+
+/* Services Section */
+.services {
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+    display: inline-block;
+    width: 28%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2a2a2a;
+    color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for cards */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Section */
+.contact {
+    height: 60vh;
+    padding: 30px;
+    text-align: center;
+    border: solid 2px #c7d0d1;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    margin: 30px auto;
+    width: 50%;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    margin: 10px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #f5f5f5;
+}
+
+.contact input[type="submit"] {
+    background-color: #959c9d;
+    color: white;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.contact input[type="submit"]:hover {
+    background-color: #c4cbcc;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    margin: 0;
+    color: #777;
+}

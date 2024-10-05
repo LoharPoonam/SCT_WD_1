@@ -1,28 +1,30 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Landing Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b73aea714b.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Landing Page</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/b73aea714b.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
-    <nav id="navbar">
-        <div class="logo">Buildskill Tech</div>
-        <ul class="navbar">
-            <li><a href="#home"><i class="fa-solid fa-house"></i>HOME</a></li>
-            <li><a href="#login"><i class="fa-solid fa-user"></i>LOGIN</a></li>
-            <li><a href="#about"><i class="fa-solid fa-address-card"></i>ABOUT</a></li>
-            <li><a href="#services"><i class="fa-solid fa-handshake"></i>SERVICES</a></li>
-            <li><a href="#contact"><i class="fa-solid fa-envelope"></i>CONTACT</a></li>
-        </ul>
-    </nav>
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="logo">Buildskill Tech</div>
+    <div class="tabs" onclick="toggleNavbar()"> ☰</div>
+    <ul class="navbar" id="navbar-list">
+        <li><a href="#home"><i class="fa-solid fa-house"></i> HOME</a></li>
+        <li><a href="javascript:void(0);" id="loginBtn"><i class="fa-solid fa-user"></i> LOGIN</a></li>
+        <li><a href="#about"><i class="fa-solid fa-address-card"></i> ABOUT</a></li>
+        <li><a href="#services"><i class="fa-solid fa-handshake"></i> SERVICES</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-envelope"></i> CONTACT</a></li>
+    </ul>
+</nav>
 
     <!-- Home Section -->
     <header id="home">
@@ -30,35 +32,69 @@
         <p id="home1">Unlock your business's potential with BuildSkill Tech's innovative web development and software solutions. Our expert team delivers powerful, customized results to help you grow and thrive in the digital world.</p>
         
     </header>
-         <div class="buildskillgif">
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form method="post">
+                <label for="username1">Username:</label>
+                <input type="text" id="username1" name="username1" placeholder="Enter Username" required><br>
+                <label for="password1">Password:</label>
+                <input type="password" id="password1" name="password1" placeholder="Enter Password" required><br>
+                <button type="submit" id="submit1">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("loginModal");
+        var loginBtn = document.getElementById("loginBtn");
+        var closeBtn = document.getElementsByClassName("close-btn")[0];
+        loginBtn.onclick = function() {
+            console.log("Login button clicked!"); 
+            modal.style.display = "block"; 
+        }
+        closeBtn.onclick = function() {
+            console.log("Close button clicked!"); 
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                console.log("Clicked outside modal");
+                modal.style.display = "none"; 
+            }
+        }
+        });
+    </script>
+
+    <div class="buildskillgif">
         <img src="buildskilltech.gif" alt="TV Animation">
     </div>
 
+    
     <!-- About Section -->
     <section id="about" class="about">
         <h2><center>About Us</center></h2>
-        <p>At BuildSkill Tech, we are passionate about empowering businesses to succeed in the fast-paced digital world. Founded with a mission to deliver innovative and tailored technology solutions, we specialize in web development, software development, and digital transformation. Our goal is to provide businesses of all sizes with the tools and expertise they need to stay ahead of the competition and achieve sustainable growth.<br><br>
-            
-            We pride ourselves on our ability to understand the unique challenges and opportunities that each business faces. Our team of highly skilled developers, designers, and technical experts work closely with clients to create customized solutions that align with their specific needs and goals. Whether you're a startup looking to establish your digital presence or a well-established company seeking to modernize and optimize your existing systems, BuildSkill Tech has the expertise and resources to help.<br><br>
-            
-            Our services span across various industries, offering end-to-end solutions that include website design, web and mobile app development, cloud-based software solutions, e-commerce platforms, and custom business applications. We also provide ongoing technical support and maintenance, ensuring that your digital tools remain efficient and up-to-date.<br><br>
-            
-            What sets BuildSkill Tech apart is our commitment to quality, innovation, and customer satisfaction. We stay at the forefront of the latest technology trends and industry best practices to ensure our clients receive state-of-the-art solutions that give them a competitive edge. Our team is dedicated to delivering on time, within budget, and with precision, making sure that every project not only meets but exceeds expectations.<br><br>
-            
-            As your trusted technology partner, we believe in fostering long-term relationships by consistently delivering exceptional service and measurable results. At BuildSkill Tech, your success is our success.<br><br>
-            
-            <b>Our Mission:</b><br>
-            To empower businesses through innovative, customized digital solutions that drive growth and enhance operational efficiency.<br><br>
-            <b>Our Vision:</b><br>
-            To be a leading technology solutions provider, recognized for our commitment to excellence, innovation, and customer success.<br><br>
-            
-            <b>Our Values:</b><br>
-            
-            Innovation: We are committed to providing cutting-edge solutions that meet the evolving needs of our clients.
-            Integrity: We uphold the highest standards of honesty and transparency in all our dealings.
-            Customer-Centric: We place our clients at the heart of everything we do, striving to deliver unmatched value.
-            Quality: We are dedicated to delivering superior products and services that exceed expectations.</p>
-    </section>
+        <p>We at BuildSkill Tech are here to empower businesses to succeed in a fast paced digital world! We were founded with a mission to be a trusted partner, delivering all types of cutting edge and tailored technology solutions. Our offerings include services in Web Development, Software Development & Digital Transformation. We aim to equip businesses of every size with the necessary tools and skills that keep them ahead of competition and ensure sustainable growth.</p><br>
+
+        <p>We take pride in our ability to understand each business we work with – the challenges as well as the opportunities. Our developers, designers, and tech experts will work with you to create tailored solutions that suit your business’ specific needs and goals. Whether you are a start-up looking for a digital face, or an established business wanting to streamline and update their current systems – BuildSkill Tech has both the capabilities and the infrastructure to help you every step of the way.</p><br>
+
+        <p>Our range of services are applicable across industries and we cover the full realm of digital solutions including website design, web & mobile app development, cloud based software solutions, e-commerce platforms and tailored business application. We also provide long term technical support and maintenance so that your digital tools stay efficient and current.</p><br>
+        
+        <p>What makes BuildSkill Tech stand out is the fact that we are backed by a team which is driven by Quality, Innovation and Customer Delight. We make it our business to be on toes with latest technology & trends – We follow all the best practice in industry and deliver solutions that not only meets but exceeds our customer's expectations. Moreover our internal processes ensure that we deliver each project on-time, within budget and with great accuracy.
+        We are committed to build enduring relationships with our clients as their trusted technology partner by delivering exceptional service and measurable results. Your success is our success.</p><br><br>
+
+
+        <p><b>Our Mission:</b>
+        To help businesses develop tailored digital solutions that improve operational performance and drive revenue.</p><br>
+        <p><b>Our Vision:</b>
+        In order to continue being a leading technology solutions provider and to be known for our commitment to excellence, innovation, and customer success.</p><br>
+        <p><b>Our Values:</b>
+        <p><b>Innovatively:</b> We are going to be partners of choice when it comes to solutions because we are committed to innovating these solutions in ways that will answer your specific needs as they emerge.
+        We have a policy of being open and honest in all our transactions, above all else.</p>
+        <p><b>Innovatively:</b>Customer-Centric: We are client driven, dedicated to delivering value that is unrivalled.</p>
+        <p><b>Quality:</b> We are committed to high quality products and services which customers will appreciate greatly.</p>
+
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -66,27 +102,27 @@
         <div class="service">
             <div class="card">
                 <h3>Custom Software Development</h3>
-                <p>We build scalable software solutions to optimize your business processes.</p>
+                <p>We design flexible software systems to improve your organizational operations.</p>
             </div>
             <div class="card">
                 <h3>E-commerce Solutions</h3>
-                <p>We design and develop fully integrated e-commerce platforms to boost sales.</p>
+                <p>We design and develop fully integrated e- commerce platforms to increase sales performance.</p>
             </div>
             <div class="card">
                 <h3>Mobile App Development</h3>
-                <p>Our team creates user-friendly mobile apps that enhance customer engagement.</p>
+                <p>We employ our team in developing personalized mobile applications that create an outstanding customer experience.</p>
             </div>
             <div class="card">
                 <h3>Cloud Solutions</h3>
-                <p>We offer secure cloud services to improve flexibility and reduce costs.</p>
+                <p>We have secure flexible cloud solutions that can be leveraged to increase business agility while cutting costs.</p>
             </div>
             <div class="card">
                 <h3>Digital Transformation</h3>
-                <p>We help modernize your business with the latest technology solutions.</p>
+                <p>We assist in transforming with current technology solutions for your company.</p>
             </div>
             <div class="card">
                 <h3>Maintenance & Support</h3>
-                <p>Our experts provide ongoing support to ensure your systems run smoothly.</p>
+                <p>We also ensure that our experts are always available when needed in order to help manage your systems.</p>
             </div>
         </div>
     </section>
@@ -98,7 +134,7 @@
             <input type="text" placeholder="Your Name" required><br>
             <input type="email" placeholder="Your Email" required><br>
             <textarea rows="5" placeholder="Your Message" required></textarea><br>
-            <input type="submit" value="Send Message">
+           <button id="submit">Send Message</button>
         </form>
     </section>
 
@@ -107,35 +143,42 @@
         <p>&copy; 2024 Buildskill Tech. All rights reserved.</p>
     </footer>
 
+    <!-- Navbar Toggle Script -->
     <script>
+        function toggleNavbar() {
+        const navbar = document.querySelector('.navbar');
+        if (navbar.style.display === "none" || navbar.style.display === "") {
+            navbar.style.display = "flex"; // Show the navbar
+        } else {
+            navbar.style.display = "none"; // Hide the navbar
+        }
+    }
         // Change navbar color on scroll
         window.onscroll = function() {changeNav()};
-        
-        function changeNav() {
-            const navbar = document.getElementById("navbar");
-            if (window.scrollY > 50) {
-                navbar.style.backgroundColor = "#333"; // Darken navbar on scroll
-            } else {
-                navbar.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                function changeNav() {
+                const navbar = document.getElementById("navbar");
+                if (window.scrollY > 50) {
+                    navbar.style.backgroundColor = "#333";
+                } else {
+                    navbar.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                }
             }
-        }
-    </script>
+     </script>
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 const target = document.querySelector(this.getAttribute('href'));
-                const offset = 80; // Adjust this value to the height of your navbar
+                const offset = 80; 
 
                 window.scrollTo({
                     top: target.offsetTop - offset,
                     behavior: 'smooth'
+                    });
                 });
             });
-        });
-    </script>
+        </script>
 
 </body>
 </html>
